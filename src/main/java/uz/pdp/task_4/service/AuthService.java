@@ -13,24 +13,20 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class MyAuthService implements UserDetailsService {
-
+public class AuthService implements UserDetailsService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         List<User> userList = new ArrayList<>(
                 Arrays.asList(
-                        new User("musa", passwordEncoder.encode( "musaUz"), new ArrayList<>()),
-                        new User("ilyos", passwordEncoder.encode( "ilyosUz"),new ArrayList<>()),
-                        new User("hamza", passwordEncoder.encode( "hamzaUz"),new ArrayList<>())
+                        new User("Musoxon", passwordEncoder.encode( "musaUz"), new ArrayList<>()),
+                        new User("Mirzobobur", passwordEncoder.encode( "mirzoUz"),new ArrayList<>())
                 ));
 
         for (User user : userList) {
-            if (user.getUsername().equals(username))
+            if (user.getUsername().equals(s))
                 return user;
         }
         throw new UsernameNotFoundException("user not found");
