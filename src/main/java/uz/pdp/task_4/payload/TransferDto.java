@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OutcomeDto {
+public class TransferDto {
     private Integer fromCardId;
     private Integer toCardId;
     private double amount;
